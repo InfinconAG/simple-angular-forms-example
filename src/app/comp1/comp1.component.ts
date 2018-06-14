@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { Comp2Model } from "../comp2/comp2.component";
 
 @Component({
   selector: "app-comp1",
@@ -11,9 +12,15 @@ export class Comp1Component implements OnInit {
 
   constructor(private formBuilder: FormBuilder) {
     this.heroForm = formBuilder.group({
-      name: ["", Validators.required]
+      name: ["", Validators.required],
+      vorname: ["", Validators.required],
+      child: this.formBuilder.group(new Comp2Model())
     });
   }
 
   ngOnInit() {}
+
+  resetForm() {
+    this.heroForm.reset();
+  }
 }

@@ -5,17 +5,20 @@
              placeholder="Name"
              formControlName="name">
       <mat-hint>Errors appear instantly!</mat-hint>
-      <mat-error *ngIf="heroForm.controls['name'].errors.required">Email is <strong>required</strong></mat-error>
+      <mat-error *ngIf="heroForm.controls['name'].errors.required">Name is <strong>required</strong></mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput
-             placeholder="Vorname"
-             required>
+      <input matInput placeholder="Vorname" formControlName="vorname">
+      <mat-hint>Vorname is required</mat-hint>
+      <mat-error *ngIf="heroForm.controls['vorname'].errors.required">Vorname is <strong>required</strong></mat-error>
     </mat-form-field>
-    <app-comp2></app-comp2>
+    <app-comp2 formControlName="child"></app-comp2>
   </div>
 </form>
 
+
 <p>Form value: {{ heroForm.value | json }}</p>
 <p>Form status: {{ heroForm.status | json }}</p>
+
+<button mat-raised-button color="primary" (click)="resetForm()">Reset</button>
