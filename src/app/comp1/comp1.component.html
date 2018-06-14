@@ -1,6 +1,21 @@
-<p>
-  comp1 works!
-</p>
+<form [formGroup]="heroForm">
+  <div fxLayout="column">
+    <mat-form-field>
+      <input matInput
+             placeholder="Name"
+             formControlName="name">
+      <mat-hint>Errors appear instantly!</mat-hint>
+      <mat-error *ngIf="heroForm.controls['name'].errors.required">Email is <strong>required</strong></mat-error>
+    </mat-form-field>
 
+    <mat-form-field>
+      <input matInput
+             placeholder="Vorname"
+             required>
+    </mat-form-field>
+    <app-comp2></app-comp2>
+  </div>
+</form>
 
-<app-comp2></app-comp2>
+<p>Form value: {{ heroForm.value | json }}</p>
+<p>Form status: {{ heroForm.status | json }}</p>

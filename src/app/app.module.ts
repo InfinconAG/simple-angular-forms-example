@@ -1,4 +1,6 @@
 import { NgModule } from "@angular/core";
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { ReactiveFormsModule } from "@angular/forms"; // <-- #1 import module
 import {
   MatButtonModule,
   MatFormFieldModule,
@@ -18,7 +20,9 @@ import { Comp2Component } from "./comp2/comp2.component";
     BrowserAnimationsModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    FlexLayoutModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
