@@ -11,14 +11,26 @@ export class Comp1Component implements OnInit {
   heroForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
+    var testChild: Comp2Model = {
+      firma: "testfirma",
+      country: "germany"
+    };
+
     this.heroForm = formBuilder.group({
       name: ["", Validators.required],
       vorname: ["", Validators.required],
-      child: this.formBuilder.group(new Comp2Model())
+      child: this.createChildGroup(testChild)
     });
   }
 
   ngOnInit() {}
+
+  private createChildGroup(childData: Comp2Model) {
+    return this.formBuilder.group({
+      firma: [childData.firma, Validators.required],
+      country: [childData.country]
+    });
+  }
 
   resetForm() {
     this.heroForm.reset();
