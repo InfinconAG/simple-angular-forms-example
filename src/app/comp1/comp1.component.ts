@@ -9,6 +9,7 @@ import { Comp2Model } from "../comp2/comp2.component";
 })
 export class Comp1Component implements OnInit {
   heroForm: FormGroup;
+  childGroup: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
     var testChild: Comp2Model = {
@@ -16,10 +17,12 @@ export class Comp1Component implements OnInit {
       country: "germany"
     };
 
+    this.childGroup = this.createChildGroup(testChild);
+
     this.heroForm = formBuilder.group({
       name: ["", Validators.required],
       vorname: ["", Validators.required],
-      child: this.createChildGroup(testChild)
+      child: this.childGroup
     });
   }
 
@@ -28,7 +31,7 @@ export class Comp1Component implements OnInit {
   private createChildGroup(childData: Comp2Model) {
     return this.formBuilder.group({
       firma: [childData.firma, Validators.required],
-      country: [childData.country]
+      country: [childData.country, Validators.required]
     });
   }
 

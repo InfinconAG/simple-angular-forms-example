@@ -2,22 +2,27 @@ import { Component, OnInit, forwardRef, Input } from "@angular/core";
 import {
   ControlValueAccessor,
   NG_VALUE_ACCESSOR,
-  FormGroup
+  FormGroup,
+  ControlContainer
 } from "@angular/forms";
 
 @Component({
-  selector: "app-comp2",
+  selector: "[formGroupName] app-comp2",
   templateUrl: "./comp2.component.html",
   styleUrls: ["./comp2.component.scss"]
 })
 export class Comp2Component implements OnInit {
-  @Input() parent: FormGroup;
-  formGroup: FormGroup;
+  group: FormGroup;
 
-  constructor() {}
+  constructor(private controlContainer: ControlContainer) {}
 
   ngOnInit() {
-    this.formGroup = this.parent.get("child") as FormGroup;
+    // this.formGroup = this.parent.get("child") as FormGroup;
+    // var x = this.parent.controls["child"];
+    // debugger;
+
+    this.group = this.controlContainer.control as FormGroup;
+    // debugger;
   }
 }
 
