@@ -14,7 +14,6 @@ export class Comp2Component implements OnInit {
   ngOnInit() {
     // this.formGroup = this.parent.get("child") as FormGroup;
     // var x = this.parent.controls["child"];
-    // debugger;
 
     this.group = this.controlContainer.control as FormGroup;
   }
