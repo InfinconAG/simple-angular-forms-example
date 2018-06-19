@@ -1,10 +1,5 @@
-import { Component, OnInit, forwardRef, Input } from "@angular/core";
-import {
-  ControlValueAccessor,
-  NG_VALUE_ACCESSOR,
-  FormGroup,
-  ControlContainer
-} from "@angular/forms";
+import { Component, OnInit } from "@angular/core";
+import { ControlContainer, FormGroup } from "@angular/forms";
 
 @Component({
   selector: "[formGroupName] app-comp2",

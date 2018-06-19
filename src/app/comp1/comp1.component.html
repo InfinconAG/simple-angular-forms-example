@@ -1,4 +1,4 @@
-<form [formGroup]="heroForm" novalidate>
+<form [formGroup]="heroForm">
   <div fxLayout="column">
     <mat-form-field>
       <input matInput
@@ -13,8 +13,27 @@
       <mat-hint>Vorname is required</mat-hint>
       <mat-error *ngIf="heroForm.controls['vorname'].errors?.required">Vorname is <strong>required</strong></mat-error>
     </mat-form-field>
-    <app-comp2 formGroupName="child"></app-comp2>
+    <app-comp2 [group]="heroForm.controls['child']"></app-comp2>
+    <!-- <div formGroupName="child">
+      <mat-form-field>
+        <input matInput
+               placeholder="Required Input"
+               formControlName="firma">
+               
+               <mat-error>Firma is <strong>required</strong></mat-error>
+  
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput
+               placeholder="Not required Field"
+               formControlName="country">
+      </mat-form-field>
+    </div> -->
   </div>
+
+  <button mat-raised-button color="primary" type="submit">SUBMIT</button>
+
 </form>
 
 

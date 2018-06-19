@@ -13,8 +13,8 @@ export class Comp1Component implements OnInit {
 
   constructor(private formBuilder: FormBuilder) {
     var testChild: Comp2Model = {
-      firma: "testfirma",
-      country: "germany"
+      firma: "",
+      country: ""
     };
 
     this.childGroup = this.createChildGroup(testChild);
