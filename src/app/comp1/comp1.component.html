@@ -13,7 +13,7 @@
       <mat-hint>Vorname is required</mat-hint>
       <mat-error *ngIf="heroForm.controls['vorname'].errors?.required">Vorname is <strong>required</strong></mat-error>
     </mat-form-field>
-    <app-comp2 [group]="childGroup"></app-comp2>
+    <app-comp2 formGroupName="child"></app-comp2>
   </div>
 </form>
 
