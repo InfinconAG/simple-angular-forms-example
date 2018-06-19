@@ -1,10 +1,10 @@
-<div [formGroup]="formGroup">
+<div [formGroup]="group">
     <mat-form-field>
       <input matInput
              placeholder="Required Input"
              formControlName="firma">
              
-             <mat-error *ngIf="formGroup.controls['firma'].errors?.required">Firma is <strong>required</strong></mat-error>
+             <mat-error *ngIf="group.controls['firma'].errors?.required">Firma is <strong>required</strong></mat-error>
 
     </mat-form-field>
 

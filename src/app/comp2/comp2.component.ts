@@ -11,13 +11,14 @@ import {
   styleUrls: ["./comp2.component.scss"]
 })
 export class Comp2Component implements OnInit {
-  @Input() parent: FormGroup;
-  formGroup: FormGroup;
+  @Input() group: FormGroup;
 
   constructor() {}
 
   ngOnInit() {
-    this.formGroup = this.parent.get("child") as FormGroup;
+    // this.formGroup = this.parent.get("child") as FormGroup;
+    // var x = this.parent.controls["child"];
+    // debugger;
   }
 }
 
