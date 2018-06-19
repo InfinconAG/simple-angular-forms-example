@@ -17,7 +17,6 @@ export class Comp2Component implements OnInit {
     // debugger;
 
     this.group = this.controlContainer.control as FormGroup;
-    // debugger;
   }
 }
 
