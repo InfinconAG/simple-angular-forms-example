@@ -1,27 +1,23 @@
-import { Component, OnInit } from "@angular/core";
-import { ControlValueAccessor } from "@angular/forms";
+import { Component, OnInit, forwardRef, Input } from "@angular/core";
+import {
+  ControlValueAccessor,
+  NG_VALUE_ACCESSOR,
+  FormGroup
+} from "@angular/forms";
 
 @Component({
   selector: "app-comp2",
   templateUrl: "./comp2.component.html",
   styleUrls: ["./comp2.component.scss"]
 })
-export class Comp2Component implements OnInit, ControlValueAccessor {
+export class Comp2Component implements OnInit {
+  @Input() parent: FormGroup;
+  formGroup: FormGroup;
+
   constructor() {}
 
-  ngOnInit() {}
-
-  writeValue(obj: any): void {
-    throw new Error("Method not implemented.");
-  }
-  registerOnChange(fn: any): void {
-    throw new Error("Method not implemented.");
-  }
-  registerOnTouched(fn: any): void {
-    throw new Error("Method not implemented.");
-  }
-  setDisabledState?(isDisabled: boolean): void {
-    throw new Error("Method not implemented.");
+  ngOnInit() {
+    this.formGroup = this.parent.get("child") as FormGroup;
   }
 }
 
