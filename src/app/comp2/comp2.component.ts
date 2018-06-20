@@ -1,10 +1,5 @@
-import { Component, OnInit, forwardRef, Input } from "@angular/core";
-import {
-  ControlValueAccessor,
-  NG_VALUE_ACCESSOR,
-  FormGroup,
-  ControlContainer
-} from "@angular/forms";
+import { Component, OnInit } from "@angular/core";
+import { ControlContainer, FormGroup } from "@angular/forms";
 
 @Component({
   selector: "[formGroupName] app-comp2",
@@ -19,10 +14,8 @@ export class Comp2Component implements OnInit {
   ngOnInit() {
     // this.formGroup = this.parent.get("child") as FormGroup;
     // var x = this.parent.controls["child"];
-    // debugger;
 
     this.group = this.controlContainer.control as FormGroup;
-    // debugger;
   }
 }
 
